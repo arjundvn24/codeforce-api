@@ -9,11 +9,12 @@
 <body>
         <div class="wrapper">  
             <div class="text-area">
-                <% data_new.forEach(data_new =>{ %>
-                <h1><%=data_new%> :</h1>
-                <%});%>
+                    <%const keyValue = (data) => Object.entries(data).forEach(([key,value]) => { %>
+                        <h1 style="font-weight: bolder;"><%=key +"->"+value%></h1>
+                        <% }) %>
+                        <% keyValue(data) %>
             </div>
-        </div>
+        </div> 
 
 
 </body>
