@@ -20,13 +20,9 @@ app.get('/info',(req,res)=>{
     async function getUserData() {
         const response=await fetch(api_url);
         data=await response.json();
-        let data_new=Object.keys(data.result[0])
-        data_new.forEach(data_new =>{
-            console.log(data_new);
-        })
-        // console.log(data_new);
+        data=data.result;
         res.render('info.ejs',{
-            data_new:data_new
+            data:data    
         });
     }
     getUserData();
@@ -34,4 +30,3 @@ app.get('/info',(req,res)=>{
 });
 
 app.listen(port, () => console.log(`Example app listening at ${port}`));
-
